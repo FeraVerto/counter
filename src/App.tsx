@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {Counter} from "./Counter/Counter";
+import Button from "./Button/Button";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    let [count, setCount] = useState(0)
+    let maxNumber = 5
+    let minNumber = 0
+
+    function increment() {
+        if (count < maxNumber) {
+            //не изменяем state напрямую!
+            let newValue = count + 1
+            setCount(newValue)
+        }
+    }
+
+    function reset() {
+        if (count > minNumber) {
+            setCount(minNumber)
+        }
+    }
+
+    return (
+        <div className="App">
+            <Counter count={count} maxNumber={maxNumber}/>
+            <div className="button_block">
+                <Button onClick={increment} title={"inc"} disabled={count === maxNumber}/>
+                <Button onClick={reset} title={"reset"} disabled={count === minNumber}/>
+            </div>
+        </div>
+    );
 }
 
 export default App;
