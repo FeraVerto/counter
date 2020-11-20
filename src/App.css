@@ -91,6 +91,7 @@ button {
 }
 
 .tuner_item input {
+    padding: 5px;
     border: 2px solid #7ce5ff;
     border-radius: 7px;
     background-color: black;
