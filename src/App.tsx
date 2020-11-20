@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import {Counter} from "./Counter/Counter";
 import Button from "./Button/Button";
+import {TunerOfCounter} from "./TunerOfCounter/TunerOfCounter";
 
 function App() {
 
@@ -25,10 +26,19 @@ function App() {
 
     return (
         <div className="App">
-            <Counter count={count} maxNumber={maxNumber}/>
-            <div className="button_block">
-                <Button onClick={increment} title={"inc"} disabled={count === maxNumber}/>
-                <Button onClick={reset} title={"reset"} disabled={count === minNumber}/>
+            <div className="tuner_block">
+                <TunerOfCounter/>
+                <div  className="button_block">
+                    {/*Логика скопирована с предыдущей кнопки*/}
+                    <Button onClick={increment} title={"set"} disabled={count === maxNumber}/>
+                </div>
+            </div>
+            <div className="count_block">
+                <Counter count={count} maxNumber={maxNumber}/>
+                <div className="button_block">
+                    <Button onClick={increment} title={"inc"} disabled={count === maxNumber}/>
+                    <Button onClick={reset} title={"reset"} disabled={count === minNumber}/>
+                </div>
             </div>
         </div>
     );

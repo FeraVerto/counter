@@ -2,21 +2,28 @@ body {
     background-color: black;
 }
 
-.App,
+.App {
+    margin: 100px auto;
+    width: 625px;
+    display: flex;
+}
+
+.count_block,
 .counter,
 .button_block,
+.tuner_block,
+.tuner,
 button {
     border-radius: 7px;
 }
 
 button,
 .button_block,
-.App {
+.count_block {
     border: 2px solid #7ce5ff;
 }
 
-.App {
-    margin: 100px auto;
+.count_block {
     padding: 15px;
     width: 200px;
     background-color: transparent;
@@ -53,8 +60,41 @@ button {
     font-weight: bold;
 }
 
-.red_number p{
+.red_number p {
     color: red;
     font-size: 40px;
+}
+
+.tuner_block {
+    margin-right: 25px;
+    padding: 15px;
+    width: 400px;
+    border: 2px solid #7ce5ff;
+}
+
+.tuner {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border: 2px solid #7ce5ff;
+    height: 76px;
+    color: #7ce5ff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tuner_item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tuner_item input {
+    border: 2px solid #7ce5ff;
+    border-radius: 7px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
 }
 
