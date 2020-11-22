@@ -4,7 +4,7 @@ body {
 
 .App {
     margin: 100px auto;
-    width: 625px;
+    width: 725px;
     display: flex;
 }
 
@@ -25,7 +25,7 @@ button,
 
 .count_block {
     padding: 15px;
-    width: 200px;
+    width: 300px;
     background-color: transparent;
 }
 
@@ -85,17 +85,9 @@ button {
     font-size: 20px;
 }
 
-.tuner_item {
-    display: flex;
-    justify-content: space-between;
-}
 
-.tuner_item input {
-    padding: 5px;
-    border: 2px solid #7ce5ff;
-    border-radius: 7px;
-    background-color: black;
-    color: white;
-    font-weight: bold;
-}
+
+
+
+
 
