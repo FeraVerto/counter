@@ -8,7 +8,7 @@ export type TunerOfCounter = {
     setNumber: (number: number | string) => void
     number: { max: number | string, start: number | string }
     setCount: (count: number | string) => void
-    count: number | string
+
     finalInputClassName: string
 }
 
@@ -43,7 +43,7 @@ export function TunerOfCounter({id, title, setNumber, number, setCount, finalInp
         //Валидация для инпута
         if (checkedNumber(inputValue, number.start, id) || checkedNumber(inputValue, number.max, id)) {
             setCount('Incorrect value')
-            /*console.log(finalInputClassName)*/
+
         } else {
             setCount("enter values and press 'set'")
         }
@@ -59,7 +59,9 @@ export function TunerOfCounter({id, title, setNumber, number, setCount, finalInp
             <label htmlFor="1">
                 {title}
             </label>
-            <input className={finalInputClassName} id="1" type="number" onChange={onChangeInputTuner}/>
+            <input
+                className={((number.max <= number.start) && (number.max !== 0 && number.start !== 0) ? `${s.error}` : finalInputClassName)}
+                id="1" type="number" onChange={onChangeInputTuner}/>
         </div>
     )
 }

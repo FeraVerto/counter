@@ -12,7 +12,9 @@ function App() {
     let [startNumber, setStartNumber] = useState<number | string>(0)
     let [count, setCount] = useState<number | string>("enter values and press 'set'")
 
-    let finalInputClassName = count === 'Incorrect value' ?  `${s.error}` : `${s.input}`;
+    let classNameMax = maxNumber < 0  ? `${s.error_max}` : `${s.input}`;
+    let classNameStart = startNumber < 0 ? `${s.error_start}` : `${s.input}`;
+
 
     let objNumber = {
         max: maxNumber,
@@ -50,21 +52,21 @@ function App() {
                                     setNumber={setMaxNumber}
                                     number={objNumber}
                                     setCount={setCount}
-                                    count="4"
-                                    finalInputClassName={finalInputClassName}
+
+                                    finalInputClassName={classNameMax}
                     />
                     <TunerOfCounter id="2"
                                     title={"start value:"}
                                     setNumber={setStartNumber}
                                     number={objNumber}
                                     setCount={setCount}
-                                    count="4"
-                                    finalInputClassName={finalInputClassName}
+
+                                    finalInputClassName={classNameStart}
                     />
                 </div>
                 <div className="button_block">
                     <Button onClick={set} title={"set"}
-                            disabled={(maxNumber < 0 && startNumber < 0 ) || (maxNumber <= startNumber)}/>
+                            disabled={(maxNumber < 0 && startNumber < 0) || (maxNumber <= startNumber)}/>
                 </div>
             </div>
 

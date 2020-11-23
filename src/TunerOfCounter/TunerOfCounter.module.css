@@ -4,15 +4,32 @@
 }
 
 .input {
-    padding: 5px 10px;
+    padding: 5px 0;
     border: 2px solid #7ce5ff;
     border-radius: 7px;
     background-color: black;
     color: white;
     font-weight: bold;
+    text-align: center;
+    outline:none;
 }
 
-.error {
+.error,
+.error_max,
+.error_start {
     border: 2px solid red;
     border-radius: 7px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    outline:none;
+    padding: 5px 0;
+}
+
+
+.error:focus,
+.error_max:focus,
+.error_start:focus {
+    border: 2px solid red;
 }
