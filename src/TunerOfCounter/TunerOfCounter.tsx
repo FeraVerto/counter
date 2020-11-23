@@ -60,7 +60,7 @@ export function TunerOfCounter({id, title, setNumber, number, setCount, finalInp
                 {title}
             </label>
             <input
-                className={((number.max <= number.start) && (number.max !== 0 && number.start !== 0) ? `${s.error}` : finalInputClassName)}
+                className={((number.max <= number.start) && (number.max !== 0 || number.start !== 0) ? `${s.error}` : finalInputClassName)}
                 id="1" type="number" onChange={onChangeInputTuner}/>
         </div>
     )
