@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import s from './App.module.css';
 import {Counter} from "./Counter/Counter";
 import Button from "./Button/Button";
-import {TunerOfCounter} from "./TunerOfCounter/TunerOfCounter";
+import {TunerOfCounter} from "./TunerBlock/TunerOfCounter/TunerOfCounter";
+import {TunerBlock} from "./TunerBlock/TunerBlock";
 
 function App() {
     //стейт для максимального и стартового числа
@@ -86,30 +87,15 @@ function App() {
 
         <div className={s.App}>
 
-            <div className={s.tuner_block}>
-                <div className={s.tuner}>
-
-                    <TunerOfCounter
-                        title={"max value:"}
-                        setNumber={setMaxNumber}
-                        compareNumbers={compareMax}
-                        classNameInput={classMax}
-                    />
-
-                    <TunerOfCounter
-                        title={"start value:"}
-                        setNumber={setStartNumber}
-                        compareNumbers={compareStart}
-                        classNameInput={classStart}
-                    />
-
-                </div>
-                <div className={s.button_block}>
-                    <Button onClick={set} title={"set"}
-                            disabled={disabled}
-                    />
-                </div>
-            </div>
+            <TunerBlock setMaxNumber={setMaxNumber}
+                        compareMax={compareMax}
+                        classMax={classMax}
+                        setStartNumber={setStartNumber}
+                        compareStart={compareStart}
+                        classStart={classStart}
+                        set={set}
+                        disabled={disabled}
+            />
 
             <div className={s.count_block}>
                 <Counter count={count} maxNumber={maxNumber} startNumber={startNumber}/>
