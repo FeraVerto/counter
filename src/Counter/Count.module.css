@@ -18,3 +18,9 @@
     font-weight: bold;
     font-size: 30px;
 }
+
+
+.red_number p {
+    color: red;
+    font-size: 40px;
+}

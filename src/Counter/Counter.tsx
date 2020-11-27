@@ -7,10 +7,10 @@ export type CounterPropsType = {
     startNumber: number | string
 }
 
-export function Counter(props: CounterPropsType) {
+export function Counter({count, maxNumber}: CounterPropsType) {
     return <div className={s.counter}>
-        <div  className={props.count === props.maxNumber && props.count !== 0 ? "red_number" : ""}>
-           <p>{props.count}</p>
+        <div  className={count === maxNumber && count !== 0 ? `${s.red_number}` : ""}>
+           <p>{count}</p>
         </div>
     </div>
 }

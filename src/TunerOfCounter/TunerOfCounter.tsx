@@ -6,10 +6,10 @@ export type TunerOfCounter = {
     title: string
     setNumber: (number: number | string) => void
     compareNumbers: (value: number | string) => void
-    error: string
+    classNameInput: string
 }
 
-export function TunerOfCounter({compareNumbers, title, error, setNumber}: TunerOfCounter) {
+export function TunerOfCounter({compareNumbers, title, classNameInput, setNumber}: TunerOfCounter) {
 
     let onChangeInputTuner = (e: ChangeEvent<HTMLInputElement>) => {
         let inputValue = Number(e.currentTarget.value)
@@ -24,7 +24,7 @@ export function TunerOfCounter({compareNumbers, title, error, setNumber}: TunerO
                 {title}
             </label>
             <input
-                className={error}
+                className={classNameInput}
                 id="1"
                 type="number"
                 onChange={onChangeInputTuner}/>

@@ -7,11 +7,11 @@ type ButtonPropsType = {
 }
 
 
-function Button(props: ButtonPropsType) {
+function Button({onClick, disabled, title}: ButtonPropsType) {
 
     return (
-        <button onClick={props.onClick}
-                disabled={props.disabled}>{props.title}</button>
+        <button onClick={onClick}
+                disabled={disabled}>{title}</button>
     );
 }
 
