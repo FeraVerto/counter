@@ -1,0 +1,36 @@
+.tuner_block {
+    padding: 15px;
+
+    width: 100%;
+
+    border: 2px solid #7ce5ff;
+    border-radius: 7px;
+}
+
+.tuner {
+    padding: 10px;
+    margin-bottom: 15px;
+
+    height: 76px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    border: 2px solid #7ce5ff;
+    border-radius: 7px;
+
+    color: #7ce5ff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.button_block {
+    height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+
+    border: 2px solid #7ce5ff;
+    border-radius: 7px;
+}

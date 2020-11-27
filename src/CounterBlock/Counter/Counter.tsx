@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './Count.module.css'
+import s from './Counter.module.css'
 
 export type CounterPropsType = {
     count: number | string,

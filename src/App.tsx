@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import s from './App.module.css';
-import {Counter} from "./Counter/Counter";
-import Button from "./Button/Button";
-import {TunerOfCounter} from "./TunerBlock/TunerOfCounter/TunerOfCounter";
 import {TunerBlock} from "./TunerBlock/TunerBlock";
+import {Route} from "react-router-dom";
+import {CounterBlock} from "./CounterBlock/CounterBlock";
 
 function App() {
     //стейт для максимального и стартового числа
@@ -84,27 +83,23 @@ function App() {
     }
 
     return (
-
         <div className={s.App}>
-
-            <TunerBlock setMaxNumber={setMaxNumber}
-                        compareMax={compareMax}
-                        classMax={classMax}
-                        setStartNumber={setStartNumber}
-                        compareStart={compareStart}
-                        classStart={classStart}
-                        set={set}
-                        disabled={disabled}
-            />
-
-            <div className={s.count_block}>
-                <Counter count={count} maxNumber={maxNumber} startNumber={startNumber}/>
-                <div className={s.button_block}>
-                    <Button onClick={increment} title={"inc"} disabled={count === maxNumber}/>
-                    <Button onClick={reset} title={"reset"} disabled={count === startNumber}/>
-                </div>
-            </div>
-
+            <Route exact path="/tuner" render={() => <TunerBlock setMaxNumber={setMaxNumber}
+                                                             compareMax={compareMax}
+                                                             classMax={classMax}
+                                                             setStartNumber={setStartNumber}
+                                                             compareStart={compareStart}
+                                                             classStart={classStart}
+                                                             set={set}
+                                                             disabled={disabled}
+            />}/>
+            <Route exact path="/counter" render={() => <CounterBlock count={count}
+                                                                     maxNumber={maxNumber}
+                                                                     startNumber={startNumber}
+                                                                     increment={increment}
+                                                                     reset={reset}
+                                                                     set={set}
+            />}/>
         </div>
     );
 }

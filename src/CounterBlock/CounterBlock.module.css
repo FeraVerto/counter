@@ -1,0 +1,19 @@
+.count_block {
+    padding: 15px;
+
+    width: 100%;
+
+    background-color: transparent;
+    border: 2px solid #7ce5ff;
+    border-radius: 7px;
+}
+
+.button_block {
+    height: 50px;
+
+    display: flex;
+    justify-content: space-around;
+
+    border: 2px solid #7ce5ff;
+    border-radius: 7px;
+}
