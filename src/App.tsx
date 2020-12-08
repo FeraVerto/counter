@@ -3,11 +3,12 @@ import s from './App.module.css';
 import {TunerBlock} from "./TunerBlock/TunerBlock";
 import {Route} from "react-router-dom";
 import {CounterBlock} from "./CounterBlock/CounterBlock";
+import {restoreState, saveState} from "./localStorage/localStorage";
 
 function App() {
     //стейт для максимального и стартового числа
-    let [maxNumber, setMaxNumber] = useState<number | string>(0)
-    let [startNumber, setStartNumber] = useState<number | string>(0)
+    let [maxNumber, setMaxNumber] = useState<number | string>(restoreState().max)
+    let [startNumber, setStartNumber] = useState<number | string>(restoreState().min)
     //стейт для выведения ошибок в каждом инпуте по отдельности
     let [classMax, setClassMax] = useState<string>(`${s.input}`)
     let [classStart, setClassStart] = useState<string>(`${s.input}`)
@@ -80,6 +81,7 @@ function App() {
     function set() {
         setCount(startNumber)
         setDisabled(true)
+        saveState(maxNumber, startNumber)
     }
 
     return (
