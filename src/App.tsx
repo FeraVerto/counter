@@ -85,13 +85,13 @@ function App() {
     return (
         <div className={s.App}>
             <Route exact path="/tuner" render={() => <TunerBlock setMaxNumber={setMaxNumber}
-                                                             compareMax={compareMax}
-                                                             classMax={classMax}
-                                                             setStartNumber={setStartNumber}
-                                                             compareStart={compareStart}
-                                                             classStart={classStart}
-                                                             set={set}
-                                                             disabled={disabled}
+                                                                 compareMax={compareMax}
+                                                                 classMax={classMax}
+                                                                 setStartNumber={setStartNumber}
+                                                                 compareStart={compareStart}
+                                                                 classStart={classStart}
+                                                                 set={set}
+                                                                 disabled={disabled}
             />}/>
             <Route exact path="/counter" render={() => <CounterBlock count={count}
                                                                      maxNumber={maxNumber}

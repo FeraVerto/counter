@@ -37,7 +37,8 @@ export function TunerBlock({setMaxNumber, compareMax, classMax, setStartNumber, 
 
             </div>
             <div className={s.button_block}>
-                <NavLink to="/counter"><Button onClick={set} title={"set"}
+                <NavLink to="/counter"><Button onClick={set}
+                                               title={"set"}
                                                disabled={disabled}
                 /></NavLink>
             </div>
